@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Waste Management Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>♻️ Smart Waste Management Dashboard</h1>
+    <p>AI-Powered | Real-Time Monitoring | Auto-refresh every 10 minutes</p>
+  </header>
+
+  <main>
+    <!-- SUMMARY CARDS -->
+    <section class="cards">
+      <div class="card">
+        <h2>Total Bins</h2>
+        <p id="totalBins">24</p>
+      </div>
+      <div class="card alert">
+        <h2>Full Bins</h2>
+        <p id="fullBins">3</p>
+      </div>
+      <div class="card">
+        <h2>Last Updated</h2>
+        <p id="lastUpdated">10:50 AM</p>
+      </div>
+      <div class="card success">
+        <h2>Recycled Waste (%)</h2>
+        <p id="recycledPercent">72%</p>
+      </div>
+    </section>
+
+    <!-- CHARTS -->
+    <section class="charts">
+      <div class="chart-box">
+        <h2>Bin Status Overview</h2>
+        <canvas id="barChart"></canvas>
+      </div>
+      <div class="chart-box">
+        <h2>Bin Location Distribution</h2>
+        <canvas id="pieChart"></canvas>
+      </div>
+    </section>
+
+    <!-- WASTE COMPOSITION -->
+    <section class="composition">
+      <h2>Waste Composition by Type</h2>
+      <div class="composition-box">
+        <div class="type plastic">Plastic: <span>35%</span></div>
+        <div class="type food">Food: <span>25%</span></div>
+        <div class="type paper">Paper: <span>20%</span></div>
+        <div class="type metal">Metal: <span>10%</span></div>
+        <div class="type glass">Glass: <span>10%</span></div>
+      </div>
+    </section>
+
+    <!-- NOTIFICATION PANEL -->
+    <section class="notifications">
+      <h2>⚠️ System Notifications</h2>
+      <ul id="notificationList">
+        <h2>🚛 Route 3 scheduled for pickup at 6:00 AM</h2>
+        <li>⚠️ Bin-B in Sector 2 nearing full capacity</li>
+        <li>✅ AI model update successful at 10:45 AM</li>
+      </ul>
+    </section>
+
+    <!-- ROUTE -->
+    <section class="route">
+      <h2>🗺️ Suggested Route</h2>
+      <p id="routeText">Route 1 → Sector A → Sector C → Dump Yard</p>
+    </section>
+  </main>
+
+  <footer>
+    <p></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

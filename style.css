@@ -1,0 +1,234 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #e3f2fd, #f1f8e9);
+  color: #333;
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 2.3rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #2563eb, #22c55e, #f59e0b);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+    background-clip: text; /* For browsers supporting standard property */
+  color: transparent; /* Fallback */
+}
+
+header p {
+  font-size: 1rem;
+  color: #555;
+  opacity: 0.8;
+}
+
+/* CARDS */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  width: 220px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card h2 {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #2563eb;
+}
+
+.card.success {
+  background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+  color: #1b5e20;
+}
+
+.alert {
+  background: #ffcdd2;
+  color: #b71c1c;
+}
+
+/* CHARTS */
+.charts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.chart-box {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 400px;
+  text-align: center;
+}
+
+.chart-box h2 {
+  color: #004d40;
+  margin-bottom: 15px;
+}
+
+/* WASTE COMPOSITION */
+.composition {
+  background: #f8fafc;
+  padding: 25px;
+  border-radius: 16px;
+  text-align: center;
+  margin-bottom: 40px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.composition h2 {
+  color: #0f5132;
+  margin-bottom: 20px;
+}
+
+.composition-box {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.type {
+  padding: 12px 20px;
+  border-radius: 12px;
+  color: white;
+  font-weight: bold;
+}
+
+.type span {
+  font-weight: normal;
+}
+
+.plastic { background: #0288d1; }
+.food { background: #ef6c00; }
+.paper { background: #43a047; }
+.metal { background: #6d4c41; }
+.glass { background: #26c6da; }
+
+/* NOTIFICATIONS */
+.notifications {
+  background: #fffde7;
+  border-left: 6px solid #fbc02d;
+  padding: 30px;
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  margin-bottom: 40px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.notifications h2 {
+  color: #795548;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.notifications ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: inline-block;
+  text-align: left;
+}
+
+.notifications li {
+  padding: 14px 25px;
+  margin: 10px 0;
+  font-size: 1.2rem; /* Increased font size */
+  font-weight: 600;
+  background: #fff8e1;
+  color: #5d4037;
+  border-radius: 12px;
+  border: 1px solid #f0e68c;
+  box-shadow: 0 3px 10px rgba(251, 192, 45, 0.2);
+  transition: all 0.3s ease;
+}
+
+.notifications li:hover {
+  background: #fff3cd;
+  transform: scale(1.05);
+}
+
+/* ROUTE */
+.route {
+  background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+  border-left: 6px solid #2e7d32;
+  padding: 30px;
+  text-align: center;
+  border-radius: 18px;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.route h2 {
+  color: #1b5e20;
+  margin-bottom: 15px;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.route p {
+  color: #2e7d32;
+  font-size: 1.3rem; /* Bigger and more readable */
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* ALERT POPUP */
+.alert-popup {
+  position: fixed;
+  top: 20px;
+  right: -400px;
+  background: linear-gradient(135deg, #ef5350, #f44336);
+  color: #fff;
+  padding: 15px 25px;
+  border-radius: 12px;
+  font-weight: 600;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transition: all 0.6s ease-in-out;
+  z-index: 9999;
+}
+
+.alert-popup.show {
+  right: 20px;
+}
+
