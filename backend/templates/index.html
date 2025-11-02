@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartBin Waste Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>SmartBin Waste Classifier ♻️</h1>
+
+        <form id="uploadForm" enctype="multipart/form-data">
+            <label for="file">Upload an image of waste:</label><br><br>
+            <input type="file" name="file" id="file" accept="image/*" required><br><br>
+            <button type="submit">Classify Waste</button>
+        </form>
+
+        <h2 id="result"></h2>
+    </div>
+
+    <!-- 🧠 Script section -->
+    <script>
+        const form = document.getElementById('uploadForm');
+        const resultDiv = document.getElementById('result');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault(); // stop form from refreshing the page
+            const fileInput = document.getElementById('file');
+            const formData = new FormData();
+            formData.append('file', fileInput.files[0]);
+
+            // send to backend
+            const response = await fetch('/predict', {
+                method: 'POST',
+                body: formData
+            });
+
+            const data = await response.json();
+            console.log('Backend Response:', data);
+
+            let label = '';
+
+            // 🌿 Match predicted class
+            switch (data.class) {
+                case "0": label = "Organic Waste 🌿"; break;
+                case "1": label = "Plastic Waste 🧴"; break;
+                case "2": label = "Metal Waste ⚙️"; break;
+                case "3": label = "Paper Waste 📄"; break;
+                default: label = "Unknown Type ❓";
+            }
+
+            resultDiv.innerHTML = `<b>Prediction:</b> ${label}`;
+        });
+    </script>
+</body>
+</html>
